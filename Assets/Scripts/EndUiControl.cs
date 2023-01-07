@@ -62,10 +62,10 @@ public class EndUiControl : MonoBehaviour
             {
                 metalImage.sprite = brown_m;
                 panel2BoxText.text = "»ÉµP";
-            }
+            }/*
 #if UNITY_WEBGL 
             CallAlert();
-#endif
+#endif*/
         }
     }
 
@@ -77,8 +77,8 @@ public class EndUiControl : MonoBehaviour
         else if (timeSpaned < 60) { return 50; }
         else { return 80; }
     }
-
+    /*
     [DllImport("__Internal")]
-    private static extern void CallAlert();
+    private static extern void CallAlert();*/
 
 }

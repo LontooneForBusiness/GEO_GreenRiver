@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,7 +28,15 @@ public class DragManager : MonoBehaviour
         }
 
         if (currentDarggingItem!=null) {
-            Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePos =Vector3.zero;
+            try
+            {
+                mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+            }
+            catch (Exception e) {
+                Debug.Log("ex -error- : " + e.Message);
+                return;
+            }
             mousePos.z = 0;
             currentDarggingItem.transform.position = mousePos;
         }
